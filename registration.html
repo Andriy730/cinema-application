@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">   
+        <!--<link rel="shortcut icon" href="icons/icon.png" type="image/png">
+        <link href="style/project.css" rel="stylesheet" type="text/css">-->
+        <link href="style/navbar.css" rel="stylesheet" type="text/css">
+        <link href="style/form.css" rel="stylesheet" type="text/css">
+        <link href="style/project.css" rel="stylesheet" type="text/css">
+        <title>Cinema</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="col-4 col-md-1 navbar-brand mr-auto" href="index.html">Cinema</a>
+            <div class="collapse navbar-collapse offset-1" id="Navbar">
+                <ul class="navbar-nav mr-lg-auto">
+                    <li class="nav-item mr-lg-4"><a class="nav-link nav-element" href="index.html">Зараз у кіно</a></li>
+                    <li class="nav-item mr-lg-4"><a class="nav-link nav-element" href="filmsList.html">Скоро у прокаті</a></li>
+                    <li class="nav-item mr-lg-4"><a class="nav-link nav-element" href="contacts.html">Контакти</a></li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item my-auto mr-2"><span class="nav-element">Location</span><img class="arrow ml-2" src="images/arrow.png" height="30" width="30"></li>
+                    <li class="nav-item"><a class="nav-link nav-element login" href="login.html">Sign in<img class="user-icon" src="images/user-icon.png" height="30" width="30"></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <div class="container">
+                <div class="row myform mx-auto">
+                    <form class="mx-auto py-5">
+                        <div class="offset-4 pl-1">
+                            <img src="images/login icon.png" class="d-flex img-fluid">
+                        </div>
+                        <div class="form-group row mx-4">
+                            <label for="emailInput">Email</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-envelope fa-lg icon"></i>
+                                </div>
+                                <input type="email" class="form-control" id="emailInput" placeholder="Enter Email">
+                            </div>
+                        </div>
+                        <div class="form-group row mx-4">
+                            <label for="passwordInput1">Password</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-lock fa-lg icon"></i>
+                                </div>
+                                <input type="password" class="form-control" id="passwordInput1" placeholder="********">
+                            </div>
+                        </div>
+                        <div class="form-group row mx-4">
+                            <label for="passwordInput2">Confirm Password</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-lock fa-lg icon"></i>
+                                </div>
+                                <input type="password" class="form-control" id="passwordInput2" placeholder="********">
+                            </div>
+                        </div>
+                        <div class="form-group row py-3">
+                            <button type="submit" class="btn login-button mx-auto" >Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    </body>
+
+</html>

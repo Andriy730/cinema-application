@@ -1,0 +1,40 @@
+.myform {
+  margin-top: 15%;
+  border: 1px;
+  border-radius: 20px;
+  background-color: rgba(35, 35, 35, 0.9);
+  color: white;
+  box-shadow: 0 4px 16px #ccc;
+  max-width: 500px;
+  max-height: 550px;
+  padding-top: 10px; }
+
+.input-group-addon {
+  text-align: center;
+  background-color: white; }
+
+.icon {
+  color: #221f1f;
+  padding: 10px;
+  min-width: 40px; }
+
+.login-button {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #3cb4e7;
+  background-color: white;
+  color: #3cb4e7;
+  width: 35%; }
+
+.login-button:hover {
+  background-color: #3cb4e7;
+  color: white; }
+
+.link {
+  color: white; }
+
+.link:hover {
+  color: red;
+  text-decoration: none; }
+
+/*# sourceMappingURL=form.css.map */
