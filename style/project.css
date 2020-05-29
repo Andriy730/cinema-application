@@ -1,0 +1,80 @@
+body {
+  background-image: url("http://wallpaperping.com/wp-content/uploads/2018/10/blur-blue-gradient-cool-background-sp-2048x1152.jpg");
+  background-repeat: no-repeat;
+  color: white; }
+  @media (min-width: 991px) {
+    body {
+      background-size: cover; } }
+
+.feedback {
+  padding-top: 4%;
+  padding-bottom: 2%;
+  padding-left: 1%;
+  border: 1px;
+  border-radius: 4px;
+  background-color: rgba(34, 31, 31, 0.9);
+  box-shadow: 0 4px 16px #ccc; }
+  @media (min-width: 991px) {
+    .feedback {
+      margin-top: 2%; }
+      .feedback .row {
+        margin-left: 5px; } }
+
+.mini-poster {
+  width: 155px;
+  height: 230px; }
+  @media (min-width: 991px) {
+    .mini-poster {
+      width: 230px;
+      height: 340px; } }
+
+.btn-primary {
+  border-radius: 15px; }
+
+.date-title {
+  text-align: center;
+  font-size: 24px; }
+
+.subtitle {
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+  text-decoration: none; }
+
+.films {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #221f1f; }
+  @media (min-width: 991px) {
+    .films {
+      background-color: rgba(34, 31, 31, 0.9); } }
+
+.films-right {
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #2a2727; }
+  @media (min-width: 991px) {
+    .films-right {
+      padding-left: 15px;
+      margin-left: 5px; } }
+
+.film-description {
+  padding-top: 4%;
+  padding-bottom: 3%;
+  padding-left: 2%;
+  border: 1px;
+  border-radius: 4px;
+  background-color: rgba(34, 31, 31, 0.9); }
+  @media (min-width: 991px) {
+    .film-description .row {
+      margin-left: 5px; } }
+
+.link:hover {
+  text-decoration: none; }
+  .link:hover .subtitle {
+    color: #3cb4e7; }
+
+/*# sourceMappingURL=project.css.map */

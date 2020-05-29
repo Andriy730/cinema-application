@@ -1,0 +1,44 @@
+@import "colors";
+
+.arrow {
+    background-color: $navbar-icons-color;
+    border-radius: 20px;
+}
+
+.arrow:hover {
+    background-color: $navbar-icons-hover-color;
+}
+
+.user-icon {
+    margin-left: 12px;
+    background-color: $navbar-icons-color;
+    border-radius: 20px;
+}
+
+.login:hover {
+    img {
+        background-color: $navbar-icons-hover-color;
+    }
+}
+
+.nav-element {
+    font-size: 18px;
+    color: $navbar-text-color;
+}
+
+.navbar-dark {
+    .navbar-nav{
+        .nav-link {
+            color: $navbar-text-color;
+        }
+        .nav-link:hover {
+            color: $navbar-text-color;
+        }
+    }
+}
+
+
+.navbar-dark {
+    background-color: $navbar-color;
+    border-bottom: 1px solid grey;
+}

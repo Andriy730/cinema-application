@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">   
+        <link rel="shortcut icon" href="images/icon.png" type="image/png">
+        <!--<link href="style/project.css" rel="stylesheet" type="text/css">-->
+        <link href="style/navbar.css" rel="stylesheet" type="text/css">
+        <link href="style/project.css" rel="stylesheet" type="text/css">
+        <link href="style/carousel.css" rel="stylesheet" type="text/css">
+        <title>Cinema</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="col-4 col-md-1 navbar-brand mr-auto" href="#">Cinema</a>
+            <div class="collapse navbar-collapse offset-1" id="Navbar">
+                <ul class="navbar-nav mr-lg-auto">
+                    <li class="nav-item mr-lg-4"><a class="nav-link nav-element" href="#">Зараз у кіно</a></li>
+                    <li class="nav-item mr-lg-4"><a class="nav-link nav-element" href="filmsList.html">Скоро у прокаті</a></li>
+                    <li class="nav-item mr-lg-4"><a class="nav-link nav-element" href="contacts.html">Контакти</a></li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item my-auto mr-2"><span class="nav-element">Location</span><img class="arrow ml-2" src="images/arrow.png" height="30" width="30"></li>
+                    <li class="nav-item"><a class="nav-link nav-element login" href="login.html">Sign in<img class="user-icon" src="images/user-icon.png" height="30" width="30"></a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <main>
+            <div>
+                <div id="posters" class="carousel slide multi-item-carousel w-100" data-ride="carousel">
+                    <div class="carousel-inner w-100" role="listbox">
+                        <div class="carousel-item col-lg-3 col-md-4 px-0 active">
+                            <div class="item">
+                                <a href="film.html">
+                                    <img class="d-block" src="images/poster1.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel-item col-lg-3 col-md-4 px-0">
+                            <div class="item">
+                                <a href="film.html">
+                                    <img class="d-block" src="images/poster2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel-item col-lg-3 col-md-4 px-0">
+                            <div class="item">
+                                <a href="film.html">
+                                    <img class="d-block" src="images/poster3.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel-item col-lg-3 col-md-4 px-0">
+                            <div class="item">
+                                <a href="film.html">
+                                    <img class="d-block" src="images/poster4.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel-item col-lg-3 col-md-4 px-0">
+                            <div class="item">
+                                <a href="film.html">
+                                    <img class="d-block" src="images/poster5.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="carousel-item col-lg-3 col-md-4 px-0">
+                            <div class="item">
+                                <a href="film.html">
+                                    <img class="d-block" src="images/poster6.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#posters" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#posters" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </main>
+        
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script>
+            function setSize() {
+                var $item = $('.carousel-item');
+                let $height = 0.9825*($(window).height() - $('nav').height());
+                $item.height($height);
+                $item = $('.item');
+                $item.height($height);
+                $item.addClass('full-screen');
+                $('.carousel img').each( function() {
+                    let delta = 1.0;
+                    if ($(window).width() > 990) {
+                        delta = 4.0;
+                    }
+                    else if ($(window).width() > 767) {
+                        delta = 3.0;
+                    }
+                    $(this).prop('height', $height);
+                    $(this).attr('width', $(window).width()/delta);
+                });
+            }
+            setSize();
+            $(window).on('resize', setSize);
+        </script>
+        <script>
+            $('.multi-item-carousel').on('slide.bs.carousel', function (e) {
+                let $e = $(e.relatedTarget),
+                    itemsPerSlide = 2;
+                if($(window).width() > 767) {
+                    itemsPerSlide = 4;
+                }
+                if($(window).width() > 991) {
+                    itemsPerSlide = 5;
+                }
+                let totalItems = $('.carousel-item', this).length,
+                    $itemsContainer = $('.carousel-inner', this),
+                    it = itemsPerSlide - (totalItems - $e.index());
+                
+                if (it > 0) {
+                    for (var i = 0; i < it; i++) {
+                    $('.carousel-item', this).eq(e.direction == "left" ? i : 0).
+                        // append slides to the end/beginning
+                        appendTo($itemsContainer);
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>

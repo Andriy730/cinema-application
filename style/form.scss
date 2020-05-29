@@ -1,0 +1,47 @@
+@import "colors";
+
+.myform {
+    margin-top: 15%;
+    border: 1px;
+    border-radius: 20px;
+    background-color: rgba(35, 35, 35, .90);
+    color: white;
+    box-shadow: 0 4px 16px #ccc;
+    max-width: 500px;
+    max-height: 550px;
+    padding-top: 10px;
+}
+
+.input-group-addon {
+    text-align: center;
+    background-color: white;
+}
+
+.icon {
+    color: $navbar-color;
+    padding: 10px;
+    min-width: 40px;
+}
+
+.login-button {
+    border-radius: 30px;
+    border-style: solid;
+    border-color: $blue-color;
+    background-color: white;
+    color: $blue-color;
+    width: 35%;
+}
+
+.login-button:hover {
+    background-color: $blue-color;
+    color: white;
+}
+
+.link {
+    color: $text-color;
+}
+
+.link:hover {
+    color: $link-hover-color;
+    text-decoration: none;
+}

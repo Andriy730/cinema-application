@@ -1,0 +1,29 @@
+.arrow {
+  background-color: #3c3c3c;
+  border-radius: 20px; }
+
+.arrow:hover {
+  background-color: red; }
+
+.user-icon {
+  margin-left: 12px;
+  background-color: #3c3c3c;
+  border-radius: 20px; }
+
+.login:hover img {
+  background-color: red; }
+
+.nav-element {
+  font-size: 18px;
+  color: white; }
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white; }
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: white; }
+
+.navbar-dark {
+  background-color: #221f1f;
+  border-bottom: 1px solid grey; }
+
+/*# sourceMappingURL=navbar.css.map */
