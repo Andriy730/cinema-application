@@ -1,10 +1,8 @@
 body {
   background-image: url("http://wallpaperping.com/wp-content/uploads/2018/10/blur-blue-gradient-cool-background-sp-2048x1152.jpg");
   background-repeat: no-repeat;
-  color: white; }
-  @media (min-width: 991px) {
-    body {
-      background-size: cover; } }
+  color: white;
+  background-size: auto; }
 
 .feedback {
   padding-top: 4%;
