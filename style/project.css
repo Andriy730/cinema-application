@@ -21,7 +21,11 @@ body {
 .mini-poster {
   width: 155px;
   height: 230px; }
-  @media (min-width: 991px) {
+  @media (min-width: 991px max-width: 1400px) {
+    .mini-poster {
+      width: 180px;
+      height: 270px; } }
+  @media (min-width: 1401px) {
     .mini-poster {
       width: 230px;
       height: 340px; } }
