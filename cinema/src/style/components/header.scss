@@ -1,0 +1,57 @@
+@import "../colors.scss";
+
+.user-icon {
+    margin-left: 12px;
+    background-color: $navbar-icons-color;
+    border-radius: 20px;
+}
+
+.login:hover {
+    img {
+        background-color: $navbar-icons-hover-color;
+    }
+}
+
+.navbar-dark {
+    .navbar-nav{
+        .nav-link {
+            font-size: 18px;
+            color: $navbar-text-color;
+        }
+        .nav-link:hover {
+            color: $navbar-text-color;
+        }
+    }
+}
+
+.navbar-dark {
+    background-color: $navbar-color;
+    border-bottom: 1px solid grey;
+}
+
+.dropdown {
+    background-color: $navbar-color;
+}
+
+.dropdown-menu {
+    background-color: $navbar-color;
+    .dropdown-item {
+        text-align: center;
+        a {
+            color: $text-color;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        button {
+            background-color: $navbar-color;
+            border-color: $navbar-color;
+        }
+    }
+    :hover {
+        background-color: $navbar-color;
+    }
+    :focus {
+        background-color: $navbar-color;
+    }
+}

@@ -1,0 +1,39 @@
+@import "../colors.scss";
+
+.login-form {
+    margin-top: 15%;
+    border: 1px;
+    border-radius: 20px;
+    background-color: $background;
+    color: $text-color;
+    box-shadow: 0 4px 16px #ccc;
+    max-width: 450px;
+    max-height: 550px;
+    padding-top: 10px;
+    padding-bottom: 3%;
+}
+
+.input-group-addon {
+    text-align: center;
+    background-color: white;
+}
+
+.icon {
+    color: $navbar-color;
+    padding: 10px;
+    min-width: 40px;
+}
+
+.login-button {
+    border-radius: 30px;
+    border-style: solid;
+    border-color: $blue-color;
+    background-color: white;
+    color: $blue-color;
+    width: 25%;
+}
+
+.login-button:hover {
+    background-color: $blue-color;
+    color: white;
+}
