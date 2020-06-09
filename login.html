@@ -44,12 +44,12 @@
                             <img src="images/login icon.png" class="d-flex img-fluid">
                         </div>
                         <div class="form-group row mx-4">
-                            <label for="emailInput">Email</label>
+                            <label for="usernameInput">Username</label>
                             <div class="input-group">
                                 <div class="input-group-addon">
-                                    <i class="fa fa-envelope fa-lg icon"></i>
+                                    <i class="fa fa-user fa-lg icon"></i>
                                 </div>
-                                <input type="email" class="form-control" id="emailInput" placeholder="Enter Email">
+                                <input type="text" class="form-control" id="usernameInput" name="usernameInput" placeholder="Enter username">
                             </div>
                         </div>
                         <div class="form-group row mx-4">
@@ -58,7 +58,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-lock fa-lg icon"></i>
                                 </div>
-                                <input type="password" class="form-control" id="passwordInput" placeholder="********">
+                                <input type="password" class="form-control" id="passwordInput" name="passwordInput" placeholder="********">
                             </div>
                         </div>
                         <div class="form-group row ml-4">
@@ -68,7 +68,7 @@
                             </div>
                           </div>
                           <div class="form-group row">
-                            <button type="submit" class="btn login-button mx-auto" >Sign in</button>
+                            <button type="button" class="btn login-button mx-auto" onclick="login();">Sign in</button>
                           </div>
                           <div class="row py-2">
                                 <a class="mx-auto link" href="registration.html"><strong>Create Account</strong></a>
@@ -81,6 +81,29 @@
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script>
+            function login() {
+                console.log('login function was invoked');
+                var loginForm = $('form')[0];
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        storage = window.localStorage;
+                        var data = JSON.parse(this.response);
+                        storage.setItem('token', "Bearer_" + data.token);
+                        storage.setItem('user', data.username);
+                        console.log(data.username);
+                        window.location.replace('index.html');
+                    } else if(this.readyState == 4 && this.status == 403) {
+                        window.location.reload();
+                    }
+                }
+                xhttp.open("POST", "http://localhost:8080/auth/sign-in/", true);
+                xhttp.setRequestHeader('Content-type', 'application/json');
+                var request = {"username": loginForm.usernameInput.value, "password": loginForm.passwordInput.value};
+                xhttp.send(JSON.stringify(request));
+            }
+        </script>
     </body>
 
 </html>

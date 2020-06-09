@@ -112,7 +112,7 @@ $ci: carousel-item;
           + .#{$ci},
           + .#{$ci} + .#{$ci},
           + .#{$ci} + .#{$ci} + .#{$ci} {
-            display: block; // three visible items
+            display: block; // four visible items
           }
 
           // prevents opposite direction "animation"

@@ -9,8 +9,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">   
-        <!--<link rel="shortcut icon" href="icons/icon.png" type="image/png">
-        <link href="style/project.css" rel="stylesheet" type="text/css">-->
+        <link rel="shortcut icon" href="images/icon.png" type="image/png">
         <link href="style/navbar.css" rel="stylesheet" type="text/css">
         <link href="style/project.css" rel="stylesheet" type="text/css">
         <title>Cinema</title>
@@ -29,68 +28,73 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item my-auto mr-2"><span class="nav-element">Location</span><img class="arrow ml-2" src="images/arrow.png" height="30" width="30"></li>
-                    <li class="nav-item"><a class="nav-link nav-element login" href="login.html">Sign in<img class="user-icon" src="images/user-icon.png" height="30" width="30"></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-element login" href="login.html">Sign in<img class="user-icon" src="images/user-icon.png" height="30" width="30"></a>
+                        <div class="dropdown-menu w-100" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="user.html">Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
         <main>
-            <div class="container film-description mt-lg-5">
+            <div class="container film-description mt-lg-3">
                 <div class="row">
                     <div class="col-12 col-md-3">
-                        <img class="mini-poster" src="images/poster1.jpg" alt="poster" height="375" width="250">
+                        <img id="image" class="mini-poster" src="#" alt="poster" height="375" width="250">
                     </div>
                     <div class="col-12 col-md">
-                        <h1>Film title</h1>
+                        <h1 id="title"></h1>
                         <ul class="list-unstyled">
-                            <li class="row">
+                            <li class="row" id="age">
                                 <p class="col-5 col-md-3">Вік:</p>
-                                <p class="col-7 col-md-9">12+</p>
+                                <p class="col-6 col-md-8">12+</p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="originalTitle">
                                 <p class="col-5 col-md-3">Оригінальна назва:</p>
-                                <p class="col-7 col-md-9">назва</p>
+                                <p class="col-6 col-md-8"></p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="director">
                                 <p class="col-5 col-md-3">Режисер:</p>
-                                <p class="col-7 col-md-9">Альберто Індус</p>
+                                <p class="col-6 col-md-8"></p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="releaseDate">
                                 <p class="col-5 col-md-3">Дата виходу:</p>
-                                <p class="col-7 col-md-9">дата</p>
+                                <p class="col-6 col-md-8"></p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="">
                                 <p class="col-5 col-md-3">Мова:</p>
-                                <p class="col-7 col-md-9">УКРАЇНСЬКАААААА</p>
+                                <p class="col-6 col-md-8">Українська</p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="genres">
                                 <p class="col-5 col-md-3">Жанр:</p>
-                                <p class="col-7 col-md-9">УЖАС</p>
+                                <p class="col-6 col-md-8"></p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="duration">
                                 <p class="col-5 col-md-3">Тривалість:</p>
-                                <p class="col-7 col-md-9">20 часов абсолютного говна</p>
+                                <p class="col-6 col-md-8"></p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="country">
                                 <p class="col-5 col-md-3">Виробництво:</p>
-                                <p class="col-7 col-md-9">Памойка</p>
+                                <p class="col-6 col-md-8"></p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="studio">
                                 <p class="col-5 col-md-3">Студія:</p>
-                                <p class="col-7 col-md-9">Мусор Бак СІНЕМА</p>
+                                <p class="col-6 col-md-8"></p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="scenario">
                                 <p class="col-5 col-md-3">Сценарій:</p>
-                                <p class="col-7 col-md-9">Банан Ніга, Волосата нога</p>
+                                <p class="col-6 col-md-8"></p>
                             </li>
-                            <li class="row">
+                            <li class="row" id="actors">
                                 <p class="col-5 col-md-3">У головних ролях:</p>
-                                <p class="col-7 col-md-9">іаіаліолдпоідпрілр плдіпрідопо іптвпріпоі </p>
+                                <p class="col-6 col-md-8"></p>
                             </li>
                         </ul>
-                        <p>
-                            long description of super pamoika film. kflsflkslfk dklgdkgnldkgldklg. dlkgdlkgjlkdgjdkl.
-                            skdgkdlgdkjglkdjgdk.gkdkkkjdkgjkdjk kdkdjgkdgkdjkdjg. sklfdddddddgkldgkljdklgjdkjgkdjgkjdkgjkdjglkdjgkldjgjdkjgkldjgkldjklgjd.
-                            dkglkdgjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjklgdgkljdlkgjkdljglkdjgjkd.s
+
+                        <p class="col-11" id="description">
                         </p>
                     </div>
                 </div>
@@ -100,6 +104,23 @@
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/movie.js"></script>
+        <script>
+            addUserElement();
+            var id = getParameterByName("movie");
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.response)
+                    displayMovie(data);
+                    console.log(data.director.name);
+                }
+            }
+
+            xhttp.open("GET", "http://localhost:8080/movie/" + id, true);
+            xhttp.send();
+        </script>
     </body>
 
 </html>

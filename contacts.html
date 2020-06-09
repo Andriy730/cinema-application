@@ -29,7 +29,14 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item my-auto mr-2"><span class="nav-element">Location</span><img class="arrow ml-2" src="images/arrow.png" height="30" width="30"></li>
-                    <li class="nav-item"><a class="nav-link nav-element login" href="login.html">Sign in<img class="user-icon" src="images/user-icon.png" height="30" width="30"></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-element login" href="login.html">Sign in<img class="user-icon" src="images/user-icon.png" height="30" width="30"></a>
+                        <div class="dropdown-menu w-100" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="user.html">Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -114,6 +121,10 @@
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script>
+            addUserElement();
+        </script>
     </body>
 
 </html>

@@ -1,10 +1,9 @@
 body {
   background-image: url("http://wallpaperping.com/wp-content/uploads/2018/10/blur-blue-gradient-cool-background-sp-2048x1152.jpg");
   background-repeat: no-repeat;
-  color: white; }
-  @media (min-width: 991px) {
-    body {
-      background-size: cover; } }
+  background-color: #221f1f;
+  color: white;
+  background-size: auto; }
 
 .feedback {
   padding-top: 4%;
@@ -20,10 +19,28 @@ body {
       .feedback .row {
         margin-left: 5px; } }
 
+.user-profile {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  border: 1px;
+  border-radius: 4px;
+  background-color: rgba(34, 31, 31, 0.9);
+  box-shadow: 0 4px 16px #ccc; }
+  @media (min-width: 991px) {
+    .user-profile {
+      margin-top: 1%; }
+      .user-profile .row {
+        margin-left: 20px; } }
+
 .mini-poster {
   width: 155px;
   height: 230px; }
-  @media (min-width: 991px) {
+  @media (min-width: 991px) and (max-width: 1400px) {
+    .mini-poster {
+      width: 180px;
+      height: 270px; } }
+  @media (min-width: 1401px) {
     .mini-poster {
       width: 230px;
       height: 340px; } }
@@ -62,8 +79,8 @@ body {
       margin-left: 5px; } }
 
 .film-description {
-  padding-top: 4%;
-  padding-bottom: 3%;
+  padding-top: 3%;
+  padding-bottom: 1%;
   padding-left: 2%;
   border: 1px;
   border-radius: 4px;

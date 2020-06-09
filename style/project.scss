@@ -4,10 +4,9 @@ body {
     //background-image: url("https://webgradients.com/public/webgradients_png/021%20True%20Sunset.png");
     background-image: url("http://wallpaperping.com/wp-content/uploads/2018/10/blur-blue-gradient-cool-background-sp-2048x1152.jpg");
     background-repeat: no-repeat;
+    background-color: $navbar-color;
     color: $text-color;
-    @media (min-width: 991px) {
-        background-size: cover;
-    }
+    background-size: auto;
 }
 
 .feedback {
@@ -26,11 +25,31 @@ body {
     }
 }
 
-.mini-poster {
-    @media (min-width: 991px) {
-        width: 230px;
-        height: 340px;    
+.user-profile {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    border: 1px;
+    border-radius: 4px;
+    background-color: $background;
+    box-shadow: 0 4px 16px #ccc;
+    @media(min-width: 991px){
+        margin-top: 1%;
+        .row {
+            margin-left: 20px;
+        }
     }
+}
+
+.mini-poster {
+    @media (min-width: 991px) and (max-width: 1400px) {
+        width: 180px;
+        height: 270px;       
+    }
+    @media (min-width: 1401px) {
+        width: 230px;
+        height: 340px;   
+    } 
     width: 155px;
     height: 230px;
 }
@@ -74,8 +93,8 @@ body {
 }
 
 .film-description {
-    padding-top: 4%;
-    padding-bottom: 3%;
+    padding-top: 3%;
+    padding-bottom: 1%;
     padding-left: 2%;
     border: 1px;
     border-radius: 4px;

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">   
+        <link rel="shortcut icon" href="images/icon.png" type="image/png">
+        <link href="style/navbar.css" rel="stylesheet" type="text/css">
+        <link href="style/project.css" rel="stylesheet" type="text/css">
+        <title>Cinema</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="col-4 col-md-1 navbar-brand mr-auto" href="index.html">Cinema</a>
+            <div class="collapse navbar-collapse offset-1" id="Navbar">
+                <ul class="navbar-nav mr-lg-auto">
+                    <li class="nav-item mr-lg-4"><a class="nav-link nav-element" href="index.html">Зараз у кіно</a></li>
+                    <li class="nav-item mr-lg-4"><a class="nav-link nav-element" href="filmsList.html">Скоро у прокаті</a></li>
+                    <li class="nav-item mr-lg-4"><a class="nav-link nav-element" href="contacts.html">Контакти</a></li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item my-auto mr-2"><span class="nav-element">Location</span><img class="arrow ml-2" src="images/arrow.png" height="30" width="30"></li>
+                    <li class="nav-item dropdown">
+                        <a id="userDropdown" class="nav-link nav-element login dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="user-icon" src="images/user-icon.png" height="30" width="30"></a>
+                        <div class="dropdown-menu w-100" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="container user-profile">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link nav-element active" href="#info" role="tab" data-toggle="tab">User information</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-element" href="#movie" role="tab" data-toggle="tab">Add new Movie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-element" href="#delete" role="tab" data-toggle="tab">Delete Movie</a>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade show active" id="info">
+                                <div class="container">
+                                    <div class="row pt-3">
+                                        <div class="col-12">
+                                            <ul class="list-unstyled">
+                                                <li id="username" class="row">
+                                                    <p class="offset-2 col-4">Username:</p>
+                                                    <p class="col-6"></p>
+                                                </li>
+                                                <li id="email" class="row">
+                                                    <p class="offset-2 col-4">Email:</p>
+                                                    <p class="col-6"></p>
+                                                </li>
+                                                <li id="role" class="row">
+                                                    <p class="offset-2 col-4">Role:</p>
+                                                    <p class="col-6"></p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                            <div role="tabpanel" class="tab-pane fade" id="movie">
+                                <div class="container">
+                                    <div class="row pt-2">
+                                        <form id="movieForm">
+                                            <div class="row pr-3">
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="title">Назва Фільму</label>
+                                                    <input type="text" class="form-control" id="title" name="title">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="originalTitle">Оригінальна назва</label>
+                                                    <input type="text" class="form-control" id="originalTitle" name="originalTitle">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="age">Вік</label>
+                                                    <input type="text" class="form-control" id="age" name="age">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="director">Режисер</label>
+                                                    <input type="text" class="form-control" id="director" name="director">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="genres">Жанр</label>
+                                                    <input type="text" class="form-control" id="genres" name="genres">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="releaseDate">Дата виходу</label>
+                                                    <input type="date" class="form-control" id="releaseDate" name="releaseDate">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="duration">Тривалість</label>
+                                                    <input type="text" class="form-control" id="duration" name="duration">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="country">Виробництво</label>
+                                                    <input type="text" class="form-control" id="country" name="country">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="studio">Студія</label>
+                                                    <input type="text" class="form-control" id="studio" name="studio">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="scenario">Сценарій</label>
+                                                    <input type="text" class="form-control" id="scenario" name="scenario">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="actors">У головних ролях</label>
+                                                    <input type="text" class="form-control" id="actors" name="actors">
+                                                </div>
+                                                <div class="form-group col-12 col-md-6">
+                                                    <label for="image">Посилання на постер</label>
+                                                    <input type="text" class="form-control" id="image" name="image">
+                                                </div>
+                                                <div class="form-group col-12">
+                                                    <label for="description">Короткий Опис</label>
+                                                    <textarea rows="6" class="form-control" id="description" name="description"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="button" class="btn btn-primary ml-3" onclick="addMovie();">Додати</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="delete">
+                                <div class="container">
+                                    <div class="row pt-2">
+                                        <form id="deleteForm">
+                                            <div class="row pr-3">
+                                                <div class="form-group col-12">
+                                                    <select class="form-control" id="movieSelect" name="movieSelect">
+
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="button" class="btn btn-primary ml-3" onclick="deleteMovie();">Видалити</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script>
+            var username = window.localStorage.getItem('user');
+            if(username == null) {
+                window.location.replace('index.html');
+            }
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.response)
+                    $('#email').children()[1].innerText = data.email;
+                    var role = (data.roles.length == 2) ? "Admin" : "User";
+                    $('#role').children()[1].innerText = role;
+                }
+            }
+            xhttp.open("GET", "http://localhost:8080/user/" + username, true);
+            xhttp.setRequestHeader('Authorization', window.localStorage.getItem('token'));
+            xhttp.send();
+            $('.user-icon').first().before(username);
+            $("#username").children()[1].innerText = username;
+        </script>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.response)
+                    var selectMovie = $('#movieSelect');
+                    console.log(selectMovie);
+                    for(movie of data) {
+                        $('<option value="' + movie.id + '">' + movie.title + " (" + movie.releaseDate.split("-")[0] + ")" + '</option>').appendTo(selectMovie);
+                    }
+                    console.log("Success");
+                }
+            }
+            xhttp.open("GET", "http://localhost:8080/movie/all/", true);
+            xhttp.send();
+        </script>
+        <script>
+            function addMovie() {
+                var movieForm = $('#movieForm');
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 201) {
+                        alert("Created");
+                    }
+                    else if(this.readyState == 4 && this.status == 400) {
+                        alert("There was error in your data");
+                    }
+                }
+                xhttp.open("POST", "http://localhost:8080/movie/", true);
+                xhttp.setRequestHeader("Authorization", window.localStorage.getItem('token'));
+                xhttp.setRequestHeader('Content-type', 'application/json');
+                var genres = movieForm.genres.value.split(",").map((genre) => ({'name': genre.trim()}));
+                var actors = movieForm.actors.value.split(",").map((actor) => ({'name': actor.trim()}));
+                var body = {
+                    'title': movieForm.title.value,
+                    'originalTitle': movieForm.originalTitle.value,
+                    'age': movieForm.age.value,
+                    'director': {"name": movieForm.director.value},
+                    'genres': genres,
+                    'releaseDate': movieForm.releaseDate.value,
+                    'duration': movieForm.duration.value,
+                    'country': movieForm.country.value,
+                    'studio': movieForm.studio.value,
+                    'scenario': movieForm.scenario.value,
+                    'actors': actors,
+                    'image': movieForm.image.value,
+                    'description': movieForm.description.value
+                }
+                xhttp.send(JSON.stringify(body));
+                movieForm.reset();
+            }
+
+            function deleteMovie() {
+                var movieSelect = $('#movieSelect');
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 204) {
+                        window.location.reload();
+                    }
+                }
+                xhttp.open("DELETE", "http://localhost:8080/movie/" + movieSelect.val(), true);
+                xhttp.setRequestHeader("Authorization", window.localStorage.getItem('token'));
+                xhttp.send();
+            }
+        </script>
+    </body>
+
+</html>

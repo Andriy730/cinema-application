@@ -9,13 +9,12 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">   
-        <!--<link rel="shortcut icon" href="icons/icon.png" type="image/png">
-        <link href="style/project.css" rel="stylesheet" type="text/css">-->
+        <link rel="shortcut icon" href="images/icon.png" type="image/png">
         <link href="style/navbar.css" rel="stylesheet" type="text/css">
         <link href="style/project.css" rel="stylesheet" type="text/css">
         <title>Cinema</title>
     </head>
-    <body>
+    <body style="background-image: none;">
         <nav class="navbar navbar-dark navbar-expand-lg">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
@@ -29,78 +28,37 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item my-auto mr-2"><span class="nav-element">Location</span><img class="arrow ml-2" src="images/arrow.png" height="30" width="30"></li>
-                    <li class="nav-item"><a class="nav-link nav-element login" href="login.html">Sign in<img class="user-icon" src="images/user-icon.png" height="30" width="30"></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-element login" href="login.html">Sign in<img class="user-icon" src="images/user-icon.png" height="30" width="30"></a>
+                        <div class="dropdown-menu w-100" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="user.html">Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
         <main>
-            <div class="row pt-5 pb-5 films">
-                <div class="col-12 pl-4 col-lg-1">
-                    <p class="date-title">3 червня</p>
-                </div>
-                <div class="col-12 col-lg-10 row films-right">
-                    <div class="afisha col-6 col-md-3 col-lg-2">
-                        <a class="link" href="film.html">
-                            <img class="mini-poster" src="images/poster1.jpg" width="230" height="340" >
-                            <div class="subtitle">Андрій і сайт: драма століття</div>
-                        </a>
-                    </div>
-                    <div class="afisha col-6 col-md-3 col-lg-2">
-                        <a class="link" href="film.html">
-                            <img class="mini-poster" src="images/poster1.jpg" width="230" height="340" >
-                            <div class="subtitle">9 кругів вебу</div>
-                        </a>
-                    </div>
-                    <div class="afisha col-6 col-md-3 col-lg-2">
-                        <a class="link" href="film.html">
-                            <img class="mini-poster" src="images/poster1.jpg" width="230" height="340" >
-                            <div class="subtitle">Переможцеві не залишається проектів</div>
-                        </a> 
-                    </div>
-                    <div class="afisha col-6 col-md-3 col-lg-2">
-                        <a class="link" href="film.html"> 
-                            <img class="mini-poster" src="images/poster1.jpg" width="230" height="340" >
-                            <div class="subtitle">Месопотамский понос і епос метилового спирту</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row pt-5 pb-5 films">
-                <div class="col-12 pl-4 col-lg-1">
-                    <p class="date-title">3 червня</p>
-                </div>
-                <div class="col-12 col-lg-10 row films-right">
-                    <div class="afisha col-6 col-md-3 col-lg-2">
-                        <a class="link" href="film.html">
-                            <img class="mini-poster" src="images/poster1.jpg" width="230" height="340" >
-                            <div class="subtitle">Андрій і сайт: драма століття</div>
-                        </a>
-                    </div>
-                    <div class="afisha col-6 col-md-3 col-lg-2">
-                        <a class="link" href="film.html">
-                            <img class="mini-poster" src="images/poster1.jpg" width="230" height="340" >
-                            <div class="subtitle">9 кругів вебу</div>
-                        </a>
-                    </div>
-                    <div class="afisha col-6 col-md-3 col-lg-2">
-                        <a class="link" href="film.html">
-                            <img class="mini-poster" src="images/poster1.jpg" width="230" height="340" >
-                            <div class="subtitle">Переможцеві не залишається проектів</div>
-                        </a> 
-                    </div>
-                    <div class="afisha col-6 col-md-3 col-lg-2">
-                        <a class="link" href="film.html"> 
-                            <img class="mini-poster" src="images/poster1.jpg" width="230" height="340" >
-                            <div class="subtitle">Месопотамский понос і епос метилового спирту</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </main>
         
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/movies.js"></script>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.response)
+                    renderMovies(data);
+                }
+            }
+            addUserElement();
+            xhttp.open("GET", "http://localhost:8080/movie/all/", true);
+            xhttp.send();
+        </script>
     </body>
 
 </html>
